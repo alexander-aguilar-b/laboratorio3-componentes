@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!--
+    Document   : catalogo
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition template="/main-template.xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+
+
+    <ui:param name="titulo" value="Reporte Ventas Último Mes" />
+    <ui:define name="body">        
+        <h3>Reporte Ventas Último Mes</h3>
+        <h:form id="formReporteMes"> 
+            <br/>
+            <p:panelGrid>
+
+                <f:facet name="header">
+                    <p:row>
+                        <p:column colspan="4">Muebles De Los Alpes</p:column>
+                    </p:row>
+                </f:facet>
+                <p:row>
+                    <!--<p:column colspan="2">Fecha generación: #{reporteBean.reporteVentasDiarias.fechaGeneracion}</p:column>-->
+                    <p:column colspan="2"><strong>Fecha Generación</strong></p:column>                    
+                    <p:column colspan="2">20-01-2017</p:column>                    
+                </p:row>
+
+                <p:row></p:row>
+                <p:row>
+                    <p:column colspan="2"><strong>Dias Mes</strong></p:column>
+                    <p:column colspan="2">30</p:column>
+                </p:row>
+
+                <p:row>
+                    <!--
+                    <p:column colspan="2">#{reporteBean.reporteVentasMes.diasMes}</p:column>
+                    <p:column colspan="2">#{reporteBean.reporteVentasMes.valorVentas}</p:column>                   -->
+                    <p:column colspan="2"><strong>Total Ventas ($)</strong></p:column>
+
+                    <p:column colspan="2">45</p:column>
+                </p:row>
+
+                <!--
+                <p:row>
+                    <p:column colspan="4">Tipo mueble: INTERIOR</p:column>
+                </p:row>
+
+                <p:row>
+                    <p:column>Nombre</p:column>
+                    <p:column>Cantidad</p:column>
+                    <p:column>Costo unitario</p:column>
+                    <p:column>Costo total</p:column>
+                </p:row>
+
+                <ui:repeat value="#{reporteBean.reporteVentasDiarias.mueblesInterior}" var="interior">
+                    <p:row>
+                        <p:column>#{interior.nombre}</p:column>
+                        <p:column>#{interior.cantidad}</p:column>
+                        <p:column>#{interior.costoUnitario}</p:column>
+                        <p:column>#{interior.costoTotal}</p:column>
+                    </p:row>
+                </ui:repeat>
+
+                <p:row>
+                    <p:column colspan="4">Tipo mueble: EXTERIOR</p:column>
+                </p:row>
+
+                <p:row>
+                    <p:column>Nombre</p:column>
+                    <p:column>Cantidad</p:column>
+                    <p:column>Costo unitario</p:column>
+                    <p:column>Costo total</p:column>
+                </p:row>
+
+                <ui:repeat value="#{reporteBean.reporteVentasDiarias.muebleExterioir}" var="exterior">
+                    <p:row>
+                        <p:column>#{exterior.nombre}</p:column>
+                        <p:column>#{exterior.cantidad}</p:column>
+                        <p:column>#{exterior.costoUnitario}</p:column>
+                        <p:column>#{exterior.costoTotal}</p:column>
+                    </p:row>
+                </ui:repeat>
+
+                <f:facet name="footer">
+                    <p:row>
+                        <p:column  colspan="4" style="text-align: right">
+                            Total: #{reporteBean.reporteVentasDiarias.total}
+                        </p:column>
+                    </p:row>
+                </f:facet>
+                
+                -->
+
+
+            </p:panelGrid>
+            <br/>
+        </h:form>
+
+        
+
+        <h:form>
+            <h:commandButton value="Regresar a menú" action="menu.xhtml" type="submit" />    
+        </h:form>
+        <br/>
+
+    </ui:define>
+
+
+</ui:composition>
+

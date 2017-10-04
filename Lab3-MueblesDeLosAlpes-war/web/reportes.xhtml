@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!--
+    Document   : reportes
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/main-template.xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:param name="titulo" value="Reportes" />
+    <ui:define name="body">
+        
+        <h:form id="formReportes">
+            <h3>Reportes</h3>
+            <br/>
+            <h:commandLink action="reportemes.xhtml" value="Reporte Ventas Último Mes"></h:commandLink>            
+        </h:form>
+        <br/>
+        <h:form>
+            <h:commandButton value="Regresar a menú" action="menu.xhtml" type="submit" />    
+        </h:form>
+        <br/>
+    </ui:define>
+    <br/>
+</ui:composition>
+
+
