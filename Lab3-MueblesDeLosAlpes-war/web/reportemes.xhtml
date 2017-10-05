@@ -12,13 +12,53 @@
 
 
 
+
     <ui:param name="titulo" value="Reporte Ventas Último Mes" />
     <ui:define name="body">        
+        <h2>Muebles De Los Alpes</h2>
         <h3>Reporte Ventas Último Mes</h3>
-        <h:form id="formReporteMes"> 
+        <h:form prependId="false"> 
             <br/>
-            <p:panelGrid>
+            <div align="right">
+                <strong>
+                    <h:outputText value="Fecha de Generación :"></h:outputText>
+                </strong>
+                <h:outputText value="#{reporteBean.reporteVentasMes.fechaGeneracion.toLocaleString()}"></h:outputText>                    
+            </div>
 
+            <br/>
+
+            <p:dataTable id="ventasMes" value="#{reporteBean.reporteVentasMes.ventasPorDia}" var="ventaDia">
+
+                <p:column id="diaMes" headerText="Dia del Mes">
+                    <h:outputText value="#{ventaDia.dia}"></h:outputText>                    
+                </p:column>
+
+                <p:column id="totalVenta" headerText="Ventas del Dia">
+                    <div align="right">
+                        <h:outputText value="#{ventaDia.totalVenta}"></h:outputText>                    
+                    </div>
+
+                </p:column>
+
+                <f:facet name="footer">                    
+                    <p:column>                        
+                        <div align="left">
+                            <h:outputText value="TOTAL"></h:outputText>                    
+                        </div>                        
+                    </p:column>
+                    <p:column>
+                        <div align="right">
+                            <h:outputText value="#{reporteBean.reporteVentasMes.totalVentasMes}">
+                                <f:convertNumber type="currency" currencySymbol="$"/>
+                            </h:outputText>    
+                        </div>                        
+                    </p:column>
+                </f:facet>
+            </p:dataTable>
+
+            <!--
+            <p:panelGrid>
                 <f:facet name="header">
                     <p:row>
                         <p:column colspan="4">Muebles De Los Alpes</p:column>
@@ -27,8 +67,7 @@
                 <p:row>
 
                     <p:column colspan="2"><strong>Fecha Generación</strong></p:column>                                        
-                    <p:column colspan="2">
-                        <!--#{reporteBean.reporteVentasMes.fechaGeneracion.toLocaleString()}-->
+                    <p:column colspan="2">            
                         <h:outputText value="#{reporteBean.reporteVentasMes.fechaGeneracion.toLocaleString()}" >
                             <f:convertDateTime pattern="dd/MM/yyyy" />
                         </h:outputText>
@@ -46,8 +85,7 @@
                 </p:row>
 
                 <p:row>
-                    <p:column colspan="2"><strong>Total Ventas</strong></p:column>                    
-                    <!--<p:column colspan="2">#{reporteBean.reporteVentasMes.totalVentasMes}</p:column>-->
+                    <p:column colspan="2"><strong>Total Ventas</strong></p:column>                                        
                     <p:column colspan="2">
                         <div align="right">
                             <h:outputText value="#{reporteBean.reporteVentasMes.totalVentasMes}">
@@ -55,15 +93,22 @@
                             </h:outputText>    
                         </div>
                     </p:column>
-
                 </p:row>
-
             </p:panelGrid>
+            -->
+
             <br/>
+
+            <p:panel header="Ventas Último Mes">
+                <p:chart id="reporteVentasUltimoMes" type="bar"
+                         model="#{reporteBean.modeloReporteVentasGrafico}"
+                         style="height: 250px">                     
+                </p:chart>
+
+            </p:panel>
         </h:form>
 
-
-
+        <br/>
         <h:form>
             <h:commandButton value="Regresar a menú" action="menu.xhtml" type="submit" />    
         </h:form>
