@@ -70,6 +70,7 @@ public class Mueble
     /**
      * Constructor sin argumentos de la clase
      */
+    
     public Mueble() 
     {
 
@@ -92,6 +93,14 @@ public class Mueble
         this.cantidad=cantidad;
         this.imagen=imagen;
         this.precio=precio;
+    }
+    
+    public Mueble(long referencia, String nombre, String descripcion, TipoMueble tipo)
+    {
+        this.referencia = referencia;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.tipo = tipo;
     }
 
     //-----------------------------------------------------------

@@ -111,8 +111,10 @@ public class ServicioPersistenciaMock implements IServicioPersistenciaMockRemote
                 RegistroVenta venta = new RegistroVenta();
                 venta.setCantidad(e);
                 venta.setProducto(muebles.get(e));
-                venta.setFechaVenta(new Date(r.nextInt()));
+                //venta.setFechaVenta(new Date(r.nextInt()));
+                venta.setFechaVenta(new Date());
                 venta.setCiudad("Bogotá");
+                registrosVentas.add(venta);
             }
         }
     }

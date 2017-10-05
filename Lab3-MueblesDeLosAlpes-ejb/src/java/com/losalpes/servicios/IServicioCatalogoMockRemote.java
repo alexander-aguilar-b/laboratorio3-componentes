@@ -48,6 +48,6 @@ public interface IServicioCatalogoMockRemote
      * Remueve un ejemplar del mueble (no el mueble)
      * @param id Identificador único del mueble
      */
-    public void removerEjemplarMueble(long id);
+    public void removerEjemplarMueble(long id);       
     
 }
