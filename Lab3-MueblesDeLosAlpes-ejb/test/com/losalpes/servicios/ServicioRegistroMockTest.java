@@ -5,10 +5,14 @@
  */
 package com.losalpes.servicios;
 
+import com.losalpes.entities.TipoDocumento;
 import javax.naming.InitialContext;
 import java.util.Properties;
 import com.losalpes.entities.TipoUsuario;
 import com.losalpes.entities.Usuario;
+import java.util.Random;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -22,6 +26,7 @@ public class ServicioRegistroMockTest {
      * Interface con referencia al servicio de vendedores en el sistema
      */
     private IServicioRegistroMockRemote servicio;
+    private IServicioPersistenciaMockRemote servicioPersistencia;
     
     @Before
     public void setUp() throws Exception {
@@ -34,6 +39,7 @@ public class ServicioRegistroMockTest {
             InitialContext contexto;
             contexto = new InitialContext(env);            
             servicio = (IServicioRegistroMockRemote) contexto.lookup("com.losalpes.servicios.IServicioRegistroMockRemote");
+            servicioPersistencia = (IServicioPersistenciaMockRemote) contexto.lookup("com.losalpes.servicios.IServicioPersistenciaMockRemote");
         } 
         catch (Exception e)
         {
@@ -46,51 +52,37 @@ public class ServicioRegistroMockTest {
      * Test of registrar method, of class ServicioRegistroMock.
      */
     @Test
-    public void testRegistrar() throws Exception {
-        //System.out.println("registrar");
-        
-        Usuario u = new Usuario("Alexander", "alex1.", TipoUsuario.Administrador);        
-        u.setDocumento(1L);
-        //Usuario u = null;
-        
-        //EJBContainer container = javax.ejb.embeddable.EJBContainer.createEJBContainer();        
-        //IServicioRegistroMockRemote instance = (IServicioRegistroMockRemote)container.getContext().lookup("java:global/classes/ServicioRegistroMock");
-        servicio.registrar(u);
-        //container.close();
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+    public void testRegistrar() throws Exception {                
+        long sufijo = System.currentTimeMillis();
+        Usuario usuario = new Usuario("Alexander" + String.valueOf(sufijo), "alex1.", TipoUsuario.Administrador);                
+        usuario.setDocumento(sufijo);        
+        usuario.setTipoDocumento(TipoDocumento.CC);
+        servicio.registrar(usuario);        
+        Usuario usuarioRegistrado =(Usuario) servicioPersistencia.findById(Usuario.class, usuario.getLogin());
+        assertNotNull(usuarioRegistrado);
     }
 
     /**
      * Test of eliminarCliente method, of class ServicioRegistroMock.
      */
-    //@Test
+    @Test
     public void testEliminarCliente() throws Exception {
-        System.out.println("eliminarCliente");
-        /*String login = "";
-        EJBContainer container = javax.ejb.embeddable.EJBContainer.createEJBContainer();
-        IServicioRegistroMockRemote instance = (IServicioRegistroMockRemote)container.getContext().lookup("java:global/classes/ServicioRegistroMock");
-        instance.eliminarCliente(login);
-        container.close();
-        */
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        long sufijo = System.currentTimeMillis();        
+        Usuario usuario = new Usuario("Alexander" + String.valueOf(sufijo), "alex1.", TipoUsuario.Administrador);                        
+        usuario.setDocumento(Long.valueOf(sufijo));        
+        usuario.setTipoDocumento(TipoDocumento.CC);
+        servicio.registrar(usuario); 
+        servicio.eliminarCliente(usuario.getLogin());        
+        Usuario usuarioRegistrado =(Usuario) servicioPersistencia.findById(Usuario.class, usuario.getLogin());        
+        assertNull(usuarioRegistrado);        
     }
 
     /**
      * Test of darClientes method, of class ServicioRegistroMock.
      */
-    //@Test
+    /*@Test
     public void testDarClientes() throws Exception {
-        /*System.out.println("darClientes");
-        EJBContainer container = javax.ejb.embeddable.EJBContainer.createEJBContainer();
-        IServicioRegistroMockRemote instance = (IServicioRegistroMockRemote)container.getContext().lookup("java:global/classes/ServicioRegistroMock");
-        List<Usuario> expResult = null;
-        List<Usuario> result = instance.darClientes();
-        assertEquals(expResult, result);
-        container.close();*/
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }
+        
+    }*/
     
 }

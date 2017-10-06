@@ -24,13 +24,14 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
+import javax.ejb.Singleton;
 import javax.ejb.Stateless;
 
 /**
  * Implementación de los servicios de persistencia
  *
  */
-@Stateless
+@Singleton
 public class ServicioPersistenciaMock implements IServicioPersistenciaMockRemote, IServicioPersistenciaMockLocal {
 
     //-----------------------------------------------------------
@@ -322,6 +323,8 @@ public class ServicioPersistenciaMock implements IServicioPersistenciaMockRemote
         
         Calendar calendarioVenta = Calendar.getInstance();
 
+        Usuario usuario = (Usuario) findById(Usuario.class, "client");
+        
         for (int i = 1; i < diaDelMes; i++) {
             Random rndCantidadMueblesVenta = new Random();
             for (int j = 0; j < 8; j++) {
@@ -335,6 +338,7 @@ public class ServicioPersistenciaMock implements IServicioPersistenciaMockRemote
                 venta.setProducto(muebleVendido);
                 venta.setFechaVenta(calendarioVenta.getTime());
                 venta.setCiudad("Bogotá");
+                venta.setComprador(usuario);
                 registrosVentas.add(venta);
             }            
         }
