@@ -12,11 +12,13 @@
 
 package com.losalpes.entities;
 
+import java.io.Serializable;
+
 /**
  * Clase de enumeración con los tipos de muebles en el sistema
  * 
  */
-public enum TipoMueble
+public enum TipoMueble implements Serializable 
 {
     Interior, Exterior
 }

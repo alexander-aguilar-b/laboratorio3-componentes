@@ -12,11 +12,13 @@
 
 package com.losalpes.entities;
 
+import java.io.Serializable;
+
 /**
  * Clase de enumeración con los tipos de muebles en el sistema
  * 
  */
-public enum TipoDocumento
+public enum TipoDocumento implements Serializable
 {
     CC,TarjetaIdentidad
 }

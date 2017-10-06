@@ -17,13 +17,17 @@ import com.losalpes.entities.RegistroVenta;
 import com.losalpes.entities.Usuario;
 import java.util.ArrayList;
 import java.util.Date;
+import javax.ejb.EJB;
 import javax.ejb.Remove;
+import javax.ejb.Singleton;
 import javax.ejb.Stateful;
+import javax.ejb.Stateless;
 
 /**
  * Implementacion de los servicios del carrito de compras en el sistema.
  * 
  */
+
 @Stateful
 public class ServicioCarritoMock implements IServicioCarritoMockRemote, IServicioCarritoMockLocal
 {
@@ -34,6 +38,7 @@ public class ServicioCarritoMock implements IServicioCarritoMockRemote, IServici
     /**
      * Interface con referencia al servicio de persistencia en el sistema
      */
+    @EJB
     private IServicioPersistenciaMockLocal persistencia;
 
     /**
@@ -60,8 +65,7 @@ public class ServicioCarritoMock implements IServicioCarritoMockRemote, IServici
      */
     public ServicioCarritoMock()
     {
-        inventario = new ArrayList<Mueble>();
-        persistencia=new ServicioPersistenciaMock();
+        inventario = new ArrayList<Mueble>();        
     }
 
     //-----------------------------------------------------------
@@ -159,7 +163,7 @@ public class ServicioCarritoMock implements IServicioCarritoMockRemote, IServici
         if (!found)
         {
             inventario.add(mueble);
-            mueble.incrementarCantidad();
+            //mueble.incrementarCantidad();
         }
 
         // Actualiza el inventario

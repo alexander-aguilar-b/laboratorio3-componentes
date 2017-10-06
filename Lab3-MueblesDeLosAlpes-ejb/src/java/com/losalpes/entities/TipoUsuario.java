@@ -12,11 +12,15 @@
 
 package com.losalpes.entities;
 
+import java.io.Serializable;
+
+
+
 /**
  * Clase de enumeración con los tipos de usuarios en el sistema
  * 
  */
-public enum TipoUsuario
+public enum TipoUsuario implements Serializable
 {
     Administrador,Cliente
 }

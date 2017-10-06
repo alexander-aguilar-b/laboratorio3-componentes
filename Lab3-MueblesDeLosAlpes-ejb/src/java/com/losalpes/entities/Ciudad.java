@@ -12,13 +12,15 @@
 
 package com.losalpes.entities;
 
+import java.io.Serializable;
+
 /**
  * Clase que representa una ciudad en el sistema
  * 
  */
-public class Ciudad
+public class Ciudad implements Serializable
 {
-      
+     
     //-----------------------------------------------------------
     // Atributos
     //-----------------------------------------------------------

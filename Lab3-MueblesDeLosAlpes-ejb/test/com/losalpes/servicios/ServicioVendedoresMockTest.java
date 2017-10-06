@@ -6,24 +6,24 @@
  * Licenciado bajo el esquema Academic Free License version 3.0
  *
  * Ejercicio: Muebles de los Alpes
- * 
+ *
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  */
-
 package com.losalpes.servicios;
 
+import com.losalpes.entities.ExperienciaVendedor;
 import javax.naming.InitialContext;
 import java.util.Properties;
 import com.losalpes.entities.Vendedor;
+import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
 
 /**
  * Clase encargada de realizar pruebas unitarias
- * 
+ *
  */
-public class ServicioVendedoresMockTest
-{
+public class ServicioVendedoresMockTest {
     //-----------------------------------------------------------
     // Atributos
     //-----------------------------------------------------------
@@ -36,27 +36,21 @@ public class ServicioVendedoresMockTest
     //-----------------------------------------------------------
     // Métodos de inicialización y terminación
     //-----------------------------------------------------------
-
     /**
-     * Método que se ejecuta antes de comenzar la prueba unitaria
-     * Se encarga de inicializar todo lo necesario para la prueba
+     * Método que se ejecuta antes de comenzar la prueba unitaria Se encarga de
+     * inicializar todo lo necesario para la prueba
      */
     @Before
-    public void setUp() throws Exception
-    {
-        try
-        {
+    public void setUp() throws Exception {
+        try {
             Properties env = new Properties();
             env.put("java.naming.factory.initial", "com.sun.enterprise.naming.SerialInitContextFactory");
             env.put("java.naming.factory.url.pkgs", "com.sun.enterprise.naming");
             env.put("org.omg.CORBA.ORBInitialPort", "3700");
             InitialContext contexto;
             contexto = new InitialContext(env);
-            // Descomentar la siguiente linea (Alex)
             servicio = (IServicioVendedoresMockRemote) contexto.lookup("com.losalpes.servicios.IServicioVendedoresMockRemote");
-        } 
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             throw new Exception(e.getMessage());
         }
     }
@@ -64,14 +58,12 @@ public class ServicioVendedoresMockTest
     //-----------------------------------------------------------
     // Métodos de prueba
     //-----------------------------------------------------------
-    
     /**
      * Método de prueba para agregar un vendedor al sistema
      */
     @Test
-    public void testAgregarVendedor() throws Exception
-    {
-        Vendedor vendedor = null;
+    public void testAgregarVendedor() throws Exception {
+        Vendedor vendedor = null;        
         servicio.agregarVendedor(vendedor);
     }
 
@@ -79,8 +71,7 @@ public class ServicioVendedoresMockTest
      * Método de prueba para eliminar un vendedor al sistema
      */
     @Test
-    public void testEliminarVendedor() throws Exception
-    {
+    public void testEliminarVendedor() throws Exception {
         servicio.eliminarVendedor(1L);
     }
 

@@ -12,15 +12,16 @@
 
 package com.losalpes.entities;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Clase que representa un usuario del sistema
  * 
  */
-public class Usuario
+public class Usuario implements Serializable
 {
-
+    
     //-----------------------------------------------------------
     // Atributos
     //-----------------------------------------------------------
