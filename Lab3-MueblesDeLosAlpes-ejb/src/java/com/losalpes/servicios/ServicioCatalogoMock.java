@@ -9,6 +9,7 @@ import com.losalpes.entities.Mueble;
 import com.losalpes.entities.Vendedor;
 import com.losalpes.excepciones.OperacionInvalidaException;
 import java.util.List;
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
 /**
@@ -21,6 +22,7 @@ public class ServicioCatalogoMock implements IServicioCatalogoMockLocal, IServic
     /**
      * Interface con referencia al servicio de persistencia en el sistema
      */
+    @EJB
     private IServicioPersistenciaMockLocal persistencia;
     
     /**
@@ -28,7 +30,7 @@ public class ServicioCatalogoMock implements IServicioCatalogoMockLocal, IServic
      */
      public ServicioCatalogoMock()
      {
-        persistencia=new ServicioPersistenciaMock();
+        //persistencia=new ServicioPersistenciaMock();
      }
 
     @Override
@@ -51,7 +53,8 @@ public class ServicioCatalogoMock implements IServicioCatalogoMockLocal, IServic
         
         try
         {
-            persistencia.delete(m);            
+            persistencia.delete(m);   
+            
         } catch (OperacionInvalidaException ex)
         {
             throw new OperacionInvalidaException(ex.getMessage());
