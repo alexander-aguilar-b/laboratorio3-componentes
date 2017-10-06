@@ -104,6 +104,21 @@ public class ServicioCatalogoMockTest {
      * Test of removerEjemplarMueble method, of class ServicioCatalogoMock.
      */
     @Test
-    public void testRemoverEjemplarMueble() throws Exception {        
+    public void testRemoverEjemplarMueble() throws Exception {
+        List<Mueble> listadoMuebles = servicio.darMuebles();
+        Mueble mueble = new Mueble(); 
+        mueble.setNombre("Silla Nueva Catalogo" + String.valueOf(listadoMuebles.size() + 1));
+        mueble.setDescripcion("Descripción silla nueva catalogo"+ String.valueOf(listadoMuebles.size() + 1));
+        mueble.setTipo(TipoMueble.Interior);
+        mueble.setCantidad(100);
+        mueble.setPrecio(1000);                
+        servicio.agregarMueble(mueble);
+        
+        List<Mueble> listadoMueblesDespuesAgregar = servicio.darMuebles();
+        
+        Mueble muebleAntesModificacion = (Mueble)servicioPersistencia.findById(Mueble.class , Long.valueOf(listadoMuebles.size() + 1));        
+        servicio.removerEjemplarMueble(listadoMuebles.size() + 1);
+        Mueble muebleDespuesModificacion = (Mueble)servicioPersistencia.findById(Mueble.class , Long.valueOf(listadoMuebles.size() + 1));                
+        assertEquals(muebleAntesModificacion.getCantidad() - 1, muebleDespuesModificacion.getCantidad());
     }    
 }

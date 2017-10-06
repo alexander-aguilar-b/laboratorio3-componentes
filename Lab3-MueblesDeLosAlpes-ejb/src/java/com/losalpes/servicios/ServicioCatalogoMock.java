@@ -68,6 +68,11 @@ public class ServicioCatalogoMock implements IServicioCatalogoMockLocal, IServic
 
     @Override
     public void removerEjemplarMueble(long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Mueble m = (Mueble) persistencia.findById(Mueble.class, id);
+        
+        if (m.getCantidad() > 0) {
+            m.setCantidad(m.getCantidad() - 1);
+            persistencia.update(m);
+        }
     }    
 }

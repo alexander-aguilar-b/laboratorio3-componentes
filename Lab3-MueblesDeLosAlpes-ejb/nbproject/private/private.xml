@@ -3,24 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/edgaguil/Dropbox/Alex/ECOS/Componentes/Laboratorios/Laboratorio3/Repo/Lab3-MueblesDeLosAlpes-ejb/src/java/com/losalpes/entities/TipoDocumento.java</file>
-            <file>file:/C:/Users/edgaguil/Dropbox/Alex/ECOS/Componentes/Laboratorios/Laboratorio3/Repo/Lab3-MueblesDeLosAlpes-ejb/src/java/com/losalpes/entities/ExperienciaVendedor.java</file>
-            <file>file:/C:/Users/edgaguil/Dropbox/Alex/ECOS/Componentes/Laboratorios/Laboratorio3/Repo/Lab3-MueblesDeLosAlpes-ejb/src/java/com/losalpes/entities/TipoUsuario.java</file>
-            <file>file:/C:/Users/edgaguil/Dropbox/Alex/ECOS/Componentes/Laboratorios/Laboratorio3/Repo/Lab3-MueblesDeLosAlpes-ejb/src/java/com/losalpes/servicios/ServicioCarritoMock.java</file>
-            <file>file:/C:/Users/edgaguil/Dropbox/Alex/ECOS/Componentes/Laboratorios/Laboratorio3/Repo/Lab3-MueblesDeLosAlpes-ejb/src/java/com/losalpes/entities/Pais.java</file>
             <file>file:/C:/Users/edgaguil/Dropbox/Alex/ECOS/Componentes/Laboratorios/Laboratorio3/Repo/Lab3-MueblesDeLosAlpes-ejb/src/java/com/losalpes/servicios/ServicioPersistenciaMock.java</file>
             <file>file:/C:/Users/edgaguil/Dropbox/Alex/ECOS/Componentes/Laboratorios/Laboratorio3/Repo/Lab3-MueblesDeLosAlpes-ejb/test/com/losalpes/servicios/ServicioVendedoresMockTest.java</file>
-            <file>file:/C:/Users/edgaguil/Dropbox/Alex/ECOS/Componentes/Laboratorios/Laboratorio3/Repo/Lab3-MueblesDeLosAlpes-ejb/test/com/losalpes/servicios/ServicioCarritoMockTest.java</file>
-            <file>file:/C:/Users/edgaguil/Dropbox/Alex/ECOS/Componentes/Laboratorios/Laboratorio3/Repo/Lab3-MueblesDeLosAlpes-ejb/src/java/com/losalpes/entities/Mueble.java</file>
-            <file>file:/C:/Users/edgaguil/Dropbox/Alex/ECOS/Componentes/Laboratorios/Laboratorio3/Repo/Lab3-MueblesDeLosAlpes-ejb/src/java/com/losalpes/entities/ReporteVentasMes.java</file>
-            <file>file:/C:/Users/edgaguil/Dropbox/Alex/ECOS/Componentes/Laboratorios/Laboratorio3/Repo/Lab3-MueblesDeLosAlpes-ejb/src/java/com/losalpes/servicios/ServicioVendedoresMock.java</file>
-            <file>file:/C:/Users/edgaguil/Dropbox/Alex/ECOS/Componentes/Laboratorios/Laboratorio3/Repo/Lab3-MueblesDeLosAlpes-ejb/src/java/com/losalpes/servicios/IServicioPersistenciaMockRemote.java</file>
-            <file>file:/C:/Users/edgaguil/Dropbox/Alex/ECOS/Componentes/Laboratorios/Laboratorio3/Repo/Lab3-MueblesDeLosAlpes-ejb/src/java/com/losalpes/entities/Profesion.java</file>
+            <file>file:/C:/Users/edgaguil/Dropbox/Alex/ECOS/Componentes/Laboratorios/Laboratorio3/Repo/Lab3-MueblesDeLosAlpes-ejb/src/java/com/losalpes/servicios/IServicioSeguridadMockLocal.java</file>
+            <file>file:/C:/Users/edgaguil/Dropbox/Alex/ECOS/Componentes/Laboratorios/Laboratorio3/Repo/Lab3-MueblesDeLosAlpes-ejb/src/java/com/losalpes/servicios/ServicioCarritoMock.java</file>
             <file>file:/C:/Users/edgaguil/Dropbox/Alex/ECOS/Componentes/Laboratorios/Laboratorio3/Repo/Lab3-MueblesDeLosAlpes-ejb/test/com/losalpes/servicios/ServicioRegistroMockTest.java</file>
-            <file>file:/C:/Users/edgaguil/Dropbox/Alex/ECOS/Componentes/Laboratorios/Laboratorio3/Repo/Lab3-MueblesDeLosAlpes-ejb/src/java/com/losalpes/entities/Usuario.java</file>
-            <file>file:/C:/Users/edgaguil/Dropbox/Alex/ECOS/Componentes/Laboratorios/Laboratorio3/Repo/Lab3-MueblesDeLosAlpes-ejb/src/java/com/losalpes/entities/Ciudad.java</file>
-            <file>file:/C:/Users/edgaguil/Dropbox/Alex/ECOS/Componentes/Laboratorios/Laboratorio3/Repo/Lab3-MueblesDeLosAlpes-ejb/src/java/com/losalpes/entities/TipoMueble.java</file>
-            <file>file:/C:/Users/edgaguil/Dropbox/Alex/ECOS/Componentes/Laboratorios/Laboratorio3/Repo/Lab3-MueblesDeLosAlpes-ejb/src/java/com/losalpes/entities/RegistroVenta.java</file>
+            <file>file:/C:/Users/edgaguil/Dropbox/Alex/ECOS/Componentes/Laboratorios/Laboratorio3/Repo/Lab3-MueblesDeLosAlpes-ejb/src/java/com/losalpes/servicios/IServicioCatalogoMockRemote.java</file>
+            <file>file:/C:/Users/edgaguil/Dropbox/Alex/ECOS/Componentes/Laboratorios/Laboratorio3/Repo/Lab3-MueblesDeLosAlpes-ejb/test/com/losalpes/servicios/ServicioCatalogoMockTest.java</file>
+            <file>file:/C:/Users/edgaguil/Dropbox/Alex/ECOS/Componentes/Laboratorios/Laboratorio3/Repo/Lab3-MueblesDeLosAlpes-ejb/src/java/com/losalpes/servicios/IServicioCatalogoMockLocal.java</file>
+            <file>file:/C:/Users/edgaguil/Dropbox/Alex/ECOS/Componentes/Laboratorios/Laboratorio3/Repo/Lab3-MueblesDeLosAlpes-ejb/src/java/com/losalpes/servicios/ServicioCatalogoMock.java</file>
         </group>
     </open-files>
 </project-private>
